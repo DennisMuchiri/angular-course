@@ -1,27 +1,41 @@
 <div class="top-menu">
 
-    <img class="logo"
-         src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png">
+  <img class="logo"
+       src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png">
 
 </div>
 
-
-<div class="courses">
-
-    <div class="course-card">
-
-        <div class="course-title">
-            Angular Core Deep Dive
-        </div>
-        <img width="300" alt="Angular Logo"
-             src="https://s3-us-west-1.amazonaws.com/angular-university/course-images/angular-core-in-depth-small.png">
-
-        <div class="course-description">
-            A detailed walk-through of the most important part of Angular - the Core and Common modules.
-        </div>
-
-    </div>
-
+<div class="courses" >
+<!--  @for (course of courses;-->
+<!--    track $index;-->
+<!--    let index = $index;-->
+<!--    let count = $count;-->
+<!--    let first = $first;-->
+<!--    let last = $last;-->
+<!--    let even = $even;-->
+<!--    let odd= $odd){-->
+<!--    <course-card-->
+<!--      [course] ="course"-->
+<!--      (courseSelected)="onCourseSelected($event)"-->
+<!--      [index]="$index"-->
+<!--      [class.is-first]="$first"-->
+<!--      [class.is-last]="$last"-->
+<!--      [class.is-even]="$even"-->
+<!--      [class.is-odd]="$odd"-->
+<!--    >-->
+<!--    </course-card>-->
+<!--  }-->
+<!--  @empty {-->
+<!--    <h1>No courses found</h1>-->
+<!--  }-->
+  <course-card
+    *ngFor="let course of courses;
+    index  as i;
+    first as isFirst"
+    (courseSelected)="onCourseSelected($event)"
+    [course] ="course"
+    [index]="course.id"
+  [cardIndex]="i +1"></course-card>
 </div>
 
 
