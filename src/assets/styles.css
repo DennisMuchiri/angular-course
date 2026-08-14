@@ -3,6 +3,10 @@ course-card {
   display: block;
 }
 
+.beginner{
+  background-color: #b41c18;
+}
+
 .course-card {
   margin-bottom: 40px;
   text-align: center;
